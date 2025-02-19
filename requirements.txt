@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+transformers
+torch
+pdfminer.six
+pymongo
+python-dotenv
+requests
+beautifulsoup4
