@@ -14,20 +14,20 @@ def extract_text_from_url(url):
 
         soup = BeautifulSoup(response.text, "html.parser")
 
-        # ✅ Find main news content (Modify for different websites)
-        content_div = soup.find("div", {"class": "Normal"})  # TOI specific class
+     
+        content_div = soup.find("div", {"class": "Normal"})  
         if not content_div:
-            content_div = soup.find("div", {"class": "article-content"})  # Generic fallback
+            content_div = soup.find("div", {"class": "article-content"}) 
         
         if content_div:
             paragraphs = content_div.find_all("p")
         else:
-            paragraphs = soup.find_all("p")  # Fallback: Extract all <p> tags
+            paragraphs = soup.find_all("p")  
 
-        # ✅ Extract text & clean unnecessary elements
+      
         article_text = " ".join([p.get_text().strip() for p in paragraphs])
 
-        # ✅ Remove unwanted text (TOI News Desk, Advertisements, etc.)
+      
         unwanted_phrases = [
             "The TOI News Desk", "Times of India", "Read More", "Subscribe to our newsletter", "Follow us on",
             "Advertisement", "Trending Now", "Breaking News", "India News", "Latest Updates"
@@ -35,11 +35,11 @@ def extract_text_from_url(url):
         for phrase in unwanted_phrases:
             article_text = article_text.replace(phrase, "")
 
-        # ✅ Remove leading/trailing spaces and fix extra spaces
+        
         article_text = " ".join(article_text.split())
 
-        # ✅ Debugging: Print extracted text in terminal to verify
-        print("\nExtracted News Text:\n", article_text[:500])  # Print first 500 characters
+       
+        print("\nExtracted News Text:\n", article_text[:500]) 
 
         return article_text if len(article_text) > 200 else None  # Return only if it's meaningful
     except Exception as e:
