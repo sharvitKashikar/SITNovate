@@ -8,17 +8,16 @@ def extract_text_from_pdf(file):
     :return: Cleaned extracted text as a string
     """
     try:
-        text = extract_text(file.file)  # Extract raw text
+        text = extract_text(file.file)  
 
         if not text or len(text) < 100:
-            return None  # Ignore PDFs with too little text
+            return None  
 
-        # ✅ Remove extra newlines & spaces
-        text = re.sub(r'\n+', '\n', text)  # Collapse multiple newlines
-        text = re.sub(r'\s+', ' ', text).strip()  # Remove extra spaces
-
-        # ✅ Remove special characters & unwanted symbols
-        text = re.sub(r'[^A-Za-z0-9,.!?\'"\s]', '', text)  # Keep only readable characters
+       
+        text = re.sub(r'\n+', '\n', text) 
+        text = re.sub(r'\s+', ' ', text).strip()  
+       
+        text = re.sub(r'[^A-Za-z0-9,.!?\'"\s]', '', text)  
         
         return text
     except Exception as e:
