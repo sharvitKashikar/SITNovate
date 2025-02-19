@@ -34,7 +34,7 @@ async def summarize_pdf(file: UploadFile = File(...)):
     if not text:
         raise HTTPException(status_code=400, detail="Could not extract text from PDF.")
 
-    summary = generate_summary(text)  # Apply summarization
+    summary = generate_summary(text) 
     return {"summary": summary}
 
 
