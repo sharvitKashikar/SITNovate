@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summarize Text</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">AI Summarizer</div>
+            <ul class="nav-links">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="summarize-pdf.html">Summarize PDF</a></li>
+                <li><a href="#" id="logout-btn" class="btn-primary">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="summarize-text">
+            <h2>Summarize Your Text</h2>
+            <p>Enter the text you want to summarize and get an AI-generated summary.</p>
+
+            <div class="input-container">
+                <textarea id="text-input" placeholder="Paste your text here..." rows="6"></textarea>
+            </div>
+
+            <button id="summarize-btn" class="btn-primary">Summarize</button>
+
+            <div id="loading" class="loading-spinner hidden"></div>
+
+            <div id="summary-container" class="summary-box hidden">
+                <h3>Summary:</h3>
+                <p id="summary-output"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 AI Summarizer. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const BASE_URL = "http://127.0.0.1:8000/api";
+
+        document.getElementById("summarize-btn").addEventListener("click", async () => {
+            const text = document.getElementById("text-input").value;
+            const email = localStorage.getItem("email");
+            if (!text.trim()) {
+                alert("Please enter some text.");
+                return;
+            }
+
+            document.getElementById("loading").classList.remove("hidden");
+            document.getElementById("summary-container").classList.add("hidden");
+
+            try {
+                const response = await fetch(`${BASE_URL}/summarize-text`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ email, text }),
+                });
+
+                if (!response.ok) throw new Error("Failed to summarize text");
+
+                const data = await response.json();
+                document.getElementById("summary-output").textContent = data.summary;
+                document.getElementById("summary-container").classList.remove("hidden");
+            } catch (error) {
+                console.error(error);
+                alert("Error summarizing text.");
+            } finally {
+                document.getElementById("loading").classList.add("hidden");
+            }
+        });
+
+        document.getElementById("logout-btn").addEventListener("click", () => {
+            localStorage.removeItem("email");
+            window.location.href = "login.html";
+        });
+    </script>
+</body>
+</html>

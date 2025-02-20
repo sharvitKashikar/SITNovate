@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - AI Summarizer</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+
+</head>
+<body>
+    <div id="particles-js"></div>
+    <header>
+        <nav>
+            <div class="logo">AI SUMMARIZER</div>
+            <ul>
+                <li><a href="summarize-text.html">Summarize Text</a></li>
+                <li><a href="summarize-pdf.html">Summarize PDF</a></li>
+                <li><a href="#" id="logout-btn" style="display: none;">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="dashboard-content">
+        <h2>Welcome to Your Dashboard</h2>
+        <p>See your summary history below:</p>
+
+        <!-- Summary History Section -->
+        <div id="history-container">
+            <p>Loading your summaries...</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 AI Summarizer. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script>
+        // Ensure logout button only appears when logged in
+        if (localStorage.getItem("email")) {
+            document.getElementById("logout-btn").style.display = "block";
+        }
+    </script>
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</body>
+</html>

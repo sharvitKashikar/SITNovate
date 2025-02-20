@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summarize PDF</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">AI Summarizer</div>
+            <ul class="nav-links">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="summarize-text.html">Summarize Text</a></li>
+                <li><a href="#" id="logout-btn">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="summarize-pdf">
+        <h2>Upload a PDF to Summarize</h2>
+        <input type="file" id="file-input" accept=".pdf">
+        <button id="upload-btn">Upload & Summarize</button>
+
+        <!-- Loading Animation -->
+        <div id="loading" class="loading-spinner hidden"></div>
+
+        <!-- Summary Output -->
+        <div id="summary-container" class="summary-box hidden"></div>
+    </section>
+
+    <script src="js/summaryService.js"></script>
+</body>
+</html>
