@@ -1,0 +1,43 @@
+/* PDF Summarization Styles */
+.summarize-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+}
+
+.file-upload {
+    width: 300px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.upload-btn {
+    background: #ff416c;
+    padding: 12px 20px;
+    margin-top: 20px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.upload-btn:hover {
+    background: #ff4b2b;
+}
+
+.summary-output {
+    margin-top: 20px;
+    width: 60%;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 5px;
+    text-align: left;
+}

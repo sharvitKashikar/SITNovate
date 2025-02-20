@@ -1,0 +1,407 @@
+/* 🔹 Global Reset and General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #fff;
+    text-align: center;
+    overflow-x: hidden;
+    padding-top: 80px; /* Adjusted to avoid overlap with fixed navbar */
+}
+
+/* 🔹 Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* 🔹 Buttons */
+button, .btn-primary {
+    background: #ff6600;
+    color: white;
+    font-size: 18px;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+button:hover, .btn-primary:hover {
+    background: #ff4500;
+    transform: scale(1.05);
+}
+
+/* 🔹 Forms */
+form {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+}
+
+input:focus {
+    outline: none;
+    border: 2px solid #ff6600;
+}
+
+/* 🔹 Summary Section */
+.summarize-pdf, .summarize-text {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* 🔹 Upload Container */
+.upload-container {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔹 File Input */
+#file-input {
+    display: block;
+    margin: 15px auto;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 5px;
+    width: 90%;
+    background: white;
+    color: black;
+}
+
+/* 🔹 Hidden Elements */
+.hidden {
+    display: none;
+}
+
+/* 📌 Loading Spinner */
+.loading-spinner {
+    margin: 20px auto;
+    border: 6px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 6px solid #ff5722;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 🔹 Summary Display */
+#summary-container {
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: 20px auto;
+    font-size: 18px;
+    font-weight: bold;
+    display: none;
+}
+
+/* 📌 Fade-in Animation for Summary */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#summary-container.show {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* 🔹 Footer */
+footer {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    margin-top: 50px;
+}
+
+/* 🔹 Login and Signup Page */
+.login-container, .signup-container {
+    text-align: center;
+    margin-top: 100px;
+}
+
+/* 🔹 Login & Signup Form Styling */
+#signup-form, #login-form {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#signup-form input, #login-form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+}
+
+#signup-form button, #login-form button {
+    width: 100%;
+}
+
+/* 🔹 Dashboard */
+.dashboard-content {
+    text-align: center;
+    padding: 50px;
+}
+
+#history-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.history-card {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    margin: 10px;
+    border-radius: 8px;
+    width: 250px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.history-card:hover {
+    transform: scale(1.05);
+}
+/* 🔹 Loading Spinner */
+.loading-spinner {
+    margin: 20px auto;
+    border: 6px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 6px solid #ff5722;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 🔹 Summary Display Box */
+.summary-box {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    display: none;
+}
+
+/* 📌 Fade-in Animation for Summary */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.summary-box.show {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+/* 🔹 Dashboard Content */
+.dashboard-content {
+    text-align: center;
+    padding: 20px;
+}
+
+/* 🔹 Grid Layout for History Cards */
+.history-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+/* 🔹 Individual Summary Card */
+.history-card {
+    background: white;
+    color: black;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 300px;
+    text-align: left;
+}
+
+/* 🔹 Summary Text - Limited Height */
+.summary-text {
+    max-height: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 🔹 "See More" Button */
+.see-more-btn {
+    background: #ff5722;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.see-more-btn:hover {
+    background: #e64a19;
+}
+/* 🔹 Dashboard Container */
+.dashboard-content {
+    text-align: center;
+    padding: 20px;
+}
+
+/* 🔹 Grid Layout for Summary Cards */
+.history-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    max-width: 90%;
+    margin: 20px auto;
+}
+
+/* 🔹 Summary Card */
+.history-card {
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* 🔹 Summary Text (Initially Collapsed) */
+.summary-text {
+    max-height: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    text-align: left;
+}
+
+/* 🔹 Expanded Summary */
+.expanded {
+    max-height: none;
+    white-space: normal;
+    overflow: visible;
+}
+
+/* 🔹 "See More" Button */
+.see-more-btn {
+    background: #ff5722;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.see-more-btn:hover {
+    background: #e64a19;
+}
+/* 🔹 Particles.js Background */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    z-index: -1;
+}
+
+/* 🔹 Ensure Content is Above Particles */
+.content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 50px;
+}
+
