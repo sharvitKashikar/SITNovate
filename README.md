@@ -16,18 +16,16 @@ Built using the MERN stack (MongoDB, Express.js, React, Node.js), this system of
 - Supports Various Content Types – Works with articles, research papers, blog posts, and more!
 
 🛠️ Tech Stack
-	 Frontend:
-	•	React.js – Provides a responsive and interactive UI for users.
+	 - Frontend:	React.js – Provides a responsive and interactive UI for users.
 
 ⚙️ Backend:
-	•	Node.js & Express.js – Handles API requests, authentication, and routing.
+	- Node.js & Express.js – Handles API requests, authentication, and routing.
 
-🤖 AI Model:
-	•	Facebook/BART-Large-CNN – A powerful neural network for abstractive summarization (Hugging Face).
-	•	Python & Flask – Facilitates model inference and text processing.
+ AI Model: 
+ - 	Facebook/BART-Large-CNN – A powerful neural network for abstractive summarization (Hugging Face). Python & Flask
+ - 	– Facilitates model inference and text processing.
 
-🗄️ Database:
-	•	MongoDB – Stores summaries, user preferences, and request logs for efficient data management.
+- Database:	MongoDB – Stores summaries, user preferences, and request logs for efficient data management.
  
   How It Works
 
